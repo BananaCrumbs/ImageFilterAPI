@@ -1,0 +1,35 @@
+{
+  "name": "image-filter-api",
+  "version": "1.0.0",
+  "description": "Image Filter API for changing various properties of images.",
+  "main": "dist/BCAPI.js",
+  "scripts": {
+    "start": "tsc -b && node dist/BCAPI.js"
+  },
+  "keywords": ["image-api", "api", "image-filters", "magik", "deepfry"],
+  "author": "BananaCrumbs <maintaincontact@bananacrumbs.com>",
+  "license": "See LICENSE.txt",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "typescript": "^4.6.2"
+  },
+  "readme": "See README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BananaCrumbs/ImageFilterAPI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BananaCrumbs/ImageFilterAPI/issues",
+    "email": "bugs@bananacrumbs.com"
+  },
+  "typings": "./dist/BCAPI.d.ts",
+  "maintainers": [
+    {
+      "name": "BananaCrumbs",
+      "email": "maintaincontact@bananacrumbs.com"
+    }
+  ]
+}

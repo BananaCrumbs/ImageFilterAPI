@@ -1,0 +1,7 @@
+
+yarn.lock
+*.png
+node_modules/
+.idea/
+dist/
+ssl/
