@@ -14,7 +14,7 @@ export default class Blur implements ImageFilterRoute {
     }
     
     public async apply(): Promise<Buffer> {
-        return magick(this.image_data, ["-blur", `0x${this.query.intensity || 5}`]);
+        return magick(this.image_data, ["-blur", `0x${this.query.intensity ?? 5}`]);
     }
     
 }
