@@ -21,10 +21,13 @@ import Wave from "./routeroot/image/Wave";
 import * as url from "url";
 import NoSuchBoundError from "./struct/NoSuchBoundError";
 import ParametersOutsideBoundsError from "./struct/ParametersOutsideBoundsError";
+import {readFileSync} from "fs";
 
 export default class SiteServer {
     
     private readonly server: HTTPServer.Server | HTTPSServer.Server;
+    
+    public static readonly index: string = readFileSync("./pub/index.html", "utf8");
     
     public constructor() {
         
@@ -67,6 +70,14 @@ export default class SiteServer {
     private static async onRequest(req: HTTPServer.IncomingMessage, res: HTTPServer.ServerResponse): Promise<any> {
         
         console.log(`User ${req.socket.remoteAddress} requested ${req.url} with method ${req.method}`);
+        
+        if(req.url === "/") {
+            res.writeHead(200, {
+                "Content-Type": "text/html",
+            });
+            res.end(SiteServer.index);
+            return;
+        }
         
         //if the server requires authentication, check for it
         if(Config.API_KEYS.enabled) {
